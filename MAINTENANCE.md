@@ -12,11 +12,12 @@ and you're fine. Everything else is occasional.
 | Piece | Needs attention? |
 |---|---|
 | **Vercel** (hosting) | No — always on, nothing to do. |
-| **Supabase** (login + data) | ⚠️ **Yes** — free projects **pause after ~7 days of inactivity**. When paused, login + the team library stop working until you resume it. |
+| **Supabase** (login + data) | ✅ **Auto-handled** — a keep-alive cron pings it daily so it never goes idle. (Free projects otherwise pause after ~7 days of inactivity.) |
 | The code | No — runs as-is. |
 
-**If Supabase pauses:** Supabase dashboard → your project → click **Restore / Resume** (takes ~1 minute). It's back.
-**To avoid pausing:** the team using it at least once a week keeps it awake (every login counts as activity). Or upgrade to Supabase **Pro ($25/mo, never pauses)**. Or ask me to set up an automatic **weekly keep-alive ping**.
+**Keep-alive (already set up):** a Vercel Cron job hits `/api/keepalive` once a day (`0 6 * * *` UTC), which runs a tiny Supabase query. That activity stops the free project from ever pausing — nothing for you to do. You can see it in Vercel → project → **Settings → Cron Jobs**, and you can test it anytime by opening `https://leibinger-to-videojet.vercel.app/api/keepalive` (should show `{"ok":true}`).
+
+**If it ever does pause anyway** (e.g., the keep-alive was removed): Supabase dashboard → your project → **Restore / Resume** (~1 minute).
 
 > Important: the GitHub token expiring does **NOT** take the app down. It only blocks *new updates*. The live app keeps running regardless.
 
