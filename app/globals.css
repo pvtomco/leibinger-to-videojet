@@ -19,6 +19,10 @@ a { color: var(--accent); }
 .appheader h1 { margin: 0; font-size: 18px; font-weight: 700; }
 .appheader .sub { font-size: 12px; opacity: .9; margin-top: 3px; }
 .appheader .who { font-size: 13px; display: flex; align-items: center; gap: 10px; }
+.brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.logo-chip { background: #fff; border-radius: 8px; padding: 6px 11px; display: inline-flex; align-items: center; box-shadow: 0 1px 3px rgba(0, 0, 0, .18); flex: none; }
+.logo-chip img { height: 34px; width: auto; display: block; }
+.login-logo { height: 54px; width: auto; display: block; margin: 0 auto 16px; }
 .wrap { max-width: 1040px; margin: 0 auto; padding: 20px 24px 80px; }
 .card {
   background: var(--panel); border: 1px solid var(--line); border-radius: 12px;

@@ -17,9 +17,15 @@ export default async function Home() {
   return (
     <>
       <header className="appheader">
-        <div>
-          <h1>Leibinger → VideoJet BMP Converter</h1>
-          <div className="sub">Tomco internal tool · converts .job files for VideoJet 1580 / 1880</div>
+        <div className="brand">
+          <span className="logo-chip">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/tomco-logo.png" alt="Tomco Automatic Machinery Co., Ltd." />
+          </span>
+          <div>
+            <h1>Leibinger → VideoJet BMP Converter</h1>
+            <div className="sub">Tomco internal tool · converts .job files for VideoJet 1580 / 1880</div>
+          </div>
         </div>
         {configured && email && (
           <div className="who">

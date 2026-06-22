@@ -10,6 +10,8 @@ export default async function LoginPage({ searchParams }) {
   return (
     <div className="center">
       <div className="loginbox card">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="login-logo" src="/tomco-logo.png" alt="Tomco Automatic Machinery Co., Ltd." />
         <h1>Leibinger → VideoJet</h1>
         <p>
           Tomco internal tool. Sign in with your <strong>@{ALLOWED_DOMAIN}</strong> Google
